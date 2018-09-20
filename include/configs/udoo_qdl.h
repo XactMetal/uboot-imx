@@ -125,8 +125,8 @@
 				"mmc write ${loadaddr} 0x2 ${fw_sz}; " \
 			"fi; "	\
 		"fi\0" \
-	"mmcargs=setenv bootargs console=${console},${baudrate} ${video} ${memory} " \
-		"root=${mmcroot} rootfstype=${mmcrootfstype} ahci_imx.hotplug=1\0" \
+	"mmcargs=setenv bootargs console=${console},${baudrate} " \
+		"root=${mmcroot} ${hdmi_patch} consoleblank=0 video=mxcfb0:dev=hdmi,1024x600M@60,bpp=32\0" \
 	"loadbootscript=" \
 		"fatload " UBOOT_DEVICE " ${mmcdev}:${mmcpart} ${loadaddr} ${script};\0" \
 	"bootscript=echo Running bootscript from mmc ...; " \
