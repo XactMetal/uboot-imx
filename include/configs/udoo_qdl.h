@@ -100,7 +100,7 @@
 	"script=uEnv.txt\0" \
 	"image=zImage\0" \
 	"console=ttymxc1\0" \
-	"splashpos=m,m\0" \
+	"splashpos=0,460\0" \
 	"fdt_high=0xffffffff\0" \
 	"initrd_high=0xffffffff\0" \
 	"fdt_file=undefined\0" \
@@ -126,7 +126,7 @@
 			"fi; "	\
 		"fi\0" \
 	"mmcargs=setenv bootargs console=${console},${baudrate} " \
-		"root=${mmcroot} ${hdmi_patch} consoleblank=0 video=mxcfb0:dev=hdmi,1024x600M@60,bpp=32\0" \
+		"root=${mmcroot} ${hdmi_patch} consoleblank=0 video=mxcfb0:dev=hdmi,1024x600M@60,bpp=32 vt.cur_default=1 vt.global_cursor_default=0\0" \
 	"loadbootscript=" \
 		"fatload " UBOOT_DEVICE " ${mmcdev}:${mmcpart} ${loadaddr} ${script};\0" \
 	"bootscript=echo Running bootscript from mmc ...; " \
